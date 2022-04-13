@@ -118,11 +118,11 @@ function ZoomMeeting() {
           }}
           value={hostName}
           validate={hostNameValid}
-          placeholder={'Enter Host Name'}
+          placeholder={'Enter Name(Guest)'}
           maxLength={20}
           minLength={2}
           onBlur={() => onBlur('HostName', hostName, 'hostNameValid')}
-          ErrorMessage={hostName == '' ? 'Enter Host Name' : null}
+          ErrorMessage={hostName == '' ? 'Enter Name(Guest)' : null}
         />
         <_InputBox
           transparent
