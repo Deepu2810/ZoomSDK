@@ -3,7 +3,9 @@ package com.videostreaming;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
-
+import android.os.Bundle;
+// For restrict ScrenShot and Screen Recording
+import android.view.WindowManager;
 public class MainActivity extends ReactActivity {
 
   /**
@@ -37,4 +39,11 @@ public class MainActivity extends ReactActivity {
       return reactRootView;
     }
   }
+
+   @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // For restrict ScrenShot and Screen Recording
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+    }
 }
