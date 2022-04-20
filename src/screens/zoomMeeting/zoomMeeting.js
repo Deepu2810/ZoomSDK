@@ -98,8 +98,7 @@ function ZoomMeeting() {
 
   return (
     <View style={mainView}>
-      <StatusBar style="auto" />
-
+      <StatusBar style="auto" backgroundColor={'#2D8CFF'} />
       <View>
         <_InputBox
           transparent
