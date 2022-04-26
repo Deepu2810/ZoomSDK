@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, Platform, StatusBar, Alert} from 'react-native';
+import {View, Text, StatusBar, Alert, Platform} from 'react-native';
 import _Button from '@button/_Button';
 import {
   heightPercentageToDP as hp,
@@ -42,29 +42,31 @@ function VideoPlayer() {
         rate={1.0}
         ignoreSilentSwitch={'obey'}
       />
-      <View
-        style={{
-          alignSelf: 'flex-end',
-          position: 'absolute',
-          marginTop: hp(2),
-          right: 10,
-        }}>
-        {!mute ? (
-          <MaterialCommunityIcons
-            name={'volume-high'}
-            size={27}
-            color={'#fff'}
-            onPress={() => setState({...state, mute: true})}
-          />
-        ) : (
-          <MaterialCommunityIcons
-            name={'volume-mute'}
-            size={27}
-            color={'#fff'}
-            onPress={() => setState({...state, mute: false})}
-          />
-        )}
-      </View>
+      {Platform.OS == 'android' ? (
+        <View
+          style={{
+            alignSelf: 'flex-end',
+            position: 'absolute',
+            marginTop: hp(2),
+            right: 10,
+          }}>
+          {!mute ? (
+            <MaterialCommunityIcons
+              name={'volume-high'}
+              size={27}
+              color={'#fff'}
+              onPress={() => setState({...state, mute: true})}
+            />
+          ) : (
+            <MaterialCommunityIcons
+              name={'volume-mute'}
+              size={27}
+              color={'#fff'}
+              onPress={() => setState({...state, mute: false})}
+            />
+          )}
+        </View>
+      ) : null}
     </View>
   );
 }
