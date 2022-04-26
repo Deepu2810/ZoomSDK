@@ -7,8 +7,7 @@ export default {
   mainView: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-
-    justifyContent: 'center',
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
 };

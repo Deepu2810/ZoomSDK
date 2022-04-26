@@ -12,6 +12,7 @@ import com.facebook.soloader.SoLoader;
 import com.brentvatne.react.ReactVideoPackage;
 import com.videostreaming.newarchitecture.MainApplicationReactNativeHost;
 import java.lang.reflect.InvocationTargetException;
+import com.oblador.vectoricons.VectorIconsPackage;
 import java.util.List;
 
 public class MainApplication extends Application implements ReactApplication {
@@ -28,6 +29,7 @@ public class MainApplication extends Application implements ReactApplication {
           @SuppressWarnings("UnnecessaryLocalVariable")
           List<ReactPackage> packages = new PackageList(this).getPackages();
           new ReactVideoPackage();
+          new VectorIconsPackage();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
           return packages;
