@@ -23,7 +23,7 @@ function VideoPlayer() {
           uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
         }}
         style={{height: hp(100), width: wp(100)}}
-        controls={true}
+        controls={true} // Pause, Forward, backward
         ref={ref => {
           player = ref;
         }}

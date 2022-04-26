@@ -276,6 +276,12 @@ dependencies {
     implementation project(':react-native-video')
     implementation "androidx.appcompat:appcompat:1.0.0"
     implementation project(':react-native-vector-icons')
+    //  implementation('com.google.android.exoplayer:exoplayer:2.13.3') {
+    //      exclude group: 'com.android.support'
+    //  }
+    //   implementation('com.google.android.exoplayer:extension-okhttp:2.13.3') {
+    //      exclude group: 'com.squareup.okhttp3', module: 'okhttp'
+    //  }
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
         exclude group:'com.facebook.fbjni'
     }
