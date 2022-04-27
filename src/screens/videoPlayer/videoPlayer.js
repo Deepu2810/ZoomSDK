@@ -14,8 +14,20 @@ const {mainView} = VideoPlayerStyles;
 function VideoPlayer() {
   const [state, setState] = useState({
     mute: false,
+    paused: false
   });
-  const {mute} = state;
+  const {mute, paused} = state;
+
+
+  function handlePause(){
+    setState({...state, paused: true})
+  }
+
+  function handleResume(){
+    setState({...state, paused: false})
+  }
+  
+  
   return (
     <View style={{flex: 1}}>
       <Video
@@ -27,10 +39,10 @@ function VideoPlayer() {
         ref={ref => {
           player = ref;
         }}
-        // paused={true} user need to click manually to play video
+        paused={paused} //user need to click manually to play video
         fullscreen={false} // default should be potrait - minimize
         fullscreenOrientation={'landscape'} // on Full screen
-        playInBackground={true} // the media should continue playing while the app is in the background. This allows customers to continue listening to the audio.
+        // playInBackground={true} // the media should continue playing while the app is in the background. This allows customers to continue listening to the audio.
         onTouchEndCapture={() => console.warn('onTouchEndCapture')}
         onVideoEnd={() => console.warn('onVideoEnd')}
         repeat={true} // After End repeat the video
@@ -43,6 +55,14 @@ function VideoPlayer() {
         volume={1.0}
         rate={1.0}
         ignoreSilentSwitch={'ignore'}
+       
+        onFullscreenPlayerDidDismiss={() => {
+          // dismissing full screen automatically pauses the video, so we have to "pause" and "resume" in state to resume
+          handlePause();
+          setTimeout(() => {
+            handleResume();
+          }, 0);
+        }}
       />
       {Platform.OS == 'android' ? (
         <View
