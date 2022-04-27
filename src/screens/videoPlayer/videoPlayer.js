@@ -41,6 +41,7 @@ function VideoPlayer() {
         }}
         paused={paused} //user need to click manually to play video
         fullscreen={false} // default should be potrait - minimize
+        playInBackground={false}
         fullscreenOrientation={'landscape'} // on Full screen
         // playInBackground={true} // the media should continue playing while the app is in the background. This allows customers to continue listening to the audio.
         onTouchEndCapture={() => console.warn('onTouchEndCapture')}
