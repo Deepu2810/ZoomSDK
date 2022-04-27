@@ -17,12 +17,12 @@ function VideoPlayer() {
   });
   const {mute} = state;
   return (
-    <View>
+    <View style={{flex: 1}}>
       <Video
         source={{
           uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
         }}
-        style={{height: hp(100), width: wp(100)}}
+        style={{height: hp(50), width: wp(100)}}
         controls={true} // Pause, Forward, backward
         ref={ref => {
           player = ref;
@@ -37,7 +37,7 @@ function VideoPlayer() {
         fullscreenOrientation={'all'}
         // style={{width: 800, height: 800}}
         muted={mute}
-        resizeMode={'cover'}
+        // resizeMode={'cover'}
         volume={1.0}
         rate={1.0}
         ignoreSilentSwitch={'obey'}
