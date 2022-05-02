@@ -32,7 +32,7 @@ function VideoPlayer() {
     <View style={{flex: 1}}>
       <Video
         source={{
-          uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+          uri: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
         }}
         style={{height: hp(50), width: wp(100)}}
         controls={true} // Pause, Forward, backward
@@ -110,3 +110,7 @@ export default VideoPlayer;
 //    right: 0,}} />
 //   </View>
 // </View>
+
+
+// https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4
+// https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4
